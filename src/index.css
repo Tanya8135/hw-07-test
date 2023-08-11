@@ -12,8 +12,8 @@ body {
   height: 100vh; */
   display: flex;
   position: relative;
-  background: #1e1e24;
-  color: #fff;
+  background: #32323b;
+  color: #cfcece;
   align-items: center;
   justify-content: center;
 }
