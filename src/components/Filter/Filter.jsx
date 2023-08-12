@@ -5,10 +5,10 @@ import css from './Filter.module.css';
 export const Filter = () => {
   const dispatch = useDispatch();
   return (
-    <div>
-      <label className={css.filterLabel}>Find contacts by Name</label>
+    <div className={css.filterBox}>
+      <label className={css.subTitle}>Find contacts by Name</label>
       <input
-        className={css.filterName}
+        className={css.input}
         type="text"
         name="filter"
         placeholder="Enter filter"
