@@ -23,7 +23,7 @@ export function App() {
   }, [darkTheme]);
 
   return (
-    <div className={css}>
+    <div className={css.appBox}>
       <main>
         <button
           className={css.btnTheme}
