@@ -1,4 +1,4 @@
-import { addFilter } from 'redux/filterSlice';
+import { setStatusFilter } from 'redux/filterSlice';
 import { useDispatch } from 'react-redux';
 import css from './Filter.module.css';
 
@@ -12,7 +12,7 @@ export const Filter = () => {
         type="text"
         name="filter"
         placeholder="Enter filter"
-        onChange={event => dispatch(addFilter(event.target.value))}
+        onChange={event => dispatch(setStatusFilter(event.target.value))}
       />
     </div>
   );

@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredContacts, getIsLoading } from 'redux/selectors';
-import { deleteContact, getContacts } from 'redux/operations';
+import { selectFilteredContacts, selectIsLoading } from 'redux/selectors';
+import { deleteContact, fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
-  const isLoading = useSelector(getIsLoading);
-  const contacts = useSelector(getFilteredContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const contacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   const handleDelete = id => {
