@@ -6,6 +6,8 @@ export const selectFilter = state => state.filter.value;
 
 export const selectIsLoading = state => state.contacts.isLoading;
 
+export const selectTheme = state => state.theme;
+
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
 

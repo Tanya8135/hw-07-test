@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from 'redux/themeSlice';
+import { selectTheme } from 'redux/selectors';
 import { ContactList } from './ContactList/ContactList';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
@@ -6,11 +9,8 @@ import { Filter } from './Filter/Filter';
 import css from './App.module.css';
 
 export function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkTheme(prevTheme => !prevTheme);
-  };
+  const dispatch = useDispatch();
+  const darkTheme = useSelector(selectTheme);
 
   useEffect(() => {
     if (darkTheme) {
@@ -23,14 +23,17 @@ export function App() {
   }, [darkTheme]);
 
   return (
-    <div className={css.appBox}>
+    <div className={css}>
       <main>
-        <button className={css.btnTheme} onClick={toggleTheme}>
+        <button
+          className={css.btnTheme}
+          onClick={() => dispatch(toggleTheme())}
+        >
           Theme: {darkTheme ? 'Light' : 'Dark'}
         </button>
         <h1>Phonebook</h1>
         <ContactForm />
-        <h2> Contacts</h2>
+        <h2>Contacts</h2>
         <Filter />
         <ContactList />
       </main>
