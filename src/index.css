@@ -64,3 +64,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.darkTheme {
+  background: #32323b;
+  color: #fff;
+}
+
+.lightTheme {
+  background: #fff;
+  color: #000;
+}
